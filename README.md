@@ -1,6 +1,4 @@
-
-getgenv().getNewLibs = function()
-	local library = {
+local library = {
 		flags = { },
 		items = { }
 	}
@@ -23,7 +21,7 @@ getgenv().getNewLibs = function()
         titlesize = 18,
         font = Enum.Font.Code,
         background = "rbxassetid://5553946656",
-        tilesize = 100,
+        tilesize = 50,
         cursor = false,
         cursorimg = "https://t0.rbxcdn.com/42f66da98c40252ee151326a82aab51f",
         backgroundcolor = Color3.fromRGB(20, 20, 20),
@@ -67,7 +65,7 @@ getgenv().getNewLibs = function()
 			library.cursor:Remove()
 		end
 	end
-	function library:CreateWatermark(name, position)
+	function library:CreateWatermark(name)
 		local gamename = marketplaceservice:GetProductInfo(game.PlaceId).Name
 		local watermark = { }
 		watermark.Visible = true
@@ -87,7 +85,7 @@ getgenv().getNewLibs = function()
 		watermark.mainbar.Visible = watermark.Visible
 		watermark.mainbar.BorderSizePixel = 0
 		watermark.mainbar.ZIndex = 5
-		watermark.mainbar.Position = UDim2.new(0, position and position.X or 10, 0, position and position.Y or 10)
+		watermark.mainbar.Position = UDim2.new(0, 1,0,1)
 		watermark.mainbar.Size = UDim2.new(0, 0, 0, 25)
 		watermark.Gradient = Instance.new("UIGradient", watermark.mainbar)
 		watermark.Gradient.Rotation = 90
@@ -222,10 +220,10 @@ getgenv().getNewLibs = function()
 		end
 		return watermark
 	end
-	function library:CreateWindow(name, size, hidebutton)
+	function library:CreateWindow(name, hidebutton)
 		local window = { }
 		window.name = name or ""
-		window.size = size and UDim2.fromOffset(size.X, size.Y) or UDim2.fromOffset(492, 598)
+		window.size = UDim2.fromOffset(492, 598)
 		window.hidebutton = hidebutton or Enum.KeyCode.RightControl
 		window.theme = library.theme
 		local updateevent = Instance.new("BindableEvent")
@@ -3271,5 +3269,5 @@ getgenv().getNewLibs = function()
 		end
 		return window
 	end
-	return library
-end
+
+return library
