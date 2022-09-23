@@ -1,3 +1,20 @@
+
+local savecon = {}
+
+function savet(a,b)
+    table.insert(a,b.." = true")
+    for i,v in pairs(savecon) do
+        writefile("aaaa.txt",v) 
+    end
+end
+
+function savef(a,b)
+    table.insert(a,b.." = false")
+    for i,v in pairs(savecon) do
+        writefile("aaaa.txt",v) 
+    end
+end
+
 local library = {
 		flags = { },
 		items = { }
