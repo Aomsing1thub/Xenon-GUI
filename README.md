@@ -1,20 +1,3 @@
-
-local savecon = {}
-
-function savet(a,b)
-    table.insert(a,b.." = true")
-    for i,v in pairs(savecon) do
-        writefile("aaaa.txt",v) 
-    end
-end
-
-function savef(a,b)
-    table.insert(a,b.." = false")
-    for i,v in pairs(savecon) do
-        writefile("aaaa.txt",v) 
-    end
-end
-
 local library = {
 		flags = { },
 		items = { }
@@ -284,7 +267,7 @@ local library = {
 		end
 		window.Frame = Instance.new("TextButton", window.Main)
 		window.Frame.Name = "main"
-		window.Frame.Position = UDim2.fromScale(0.5, 0.5)
+		window.Frame.Position = UDim2.fromScale(0.5, -570, 0.5, 116)
 		window.Frame.BorderSizePixel = 0
 		window.Frame.Size = window.size
 		window.Frame.AutoButtonColor = false
