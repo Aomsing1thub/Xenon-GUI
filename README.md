@@ -267,7 +267,7 @@ local library = {
 		end
 		window.Frame = Instance.new("TextButton", window.Main)
 		window.Frame.Name = "main"
-		window.Frame.Position = UDim2.fromScale(0.5, -570, 0.5, 116)
+		window.Frame.Position = UDim2.new(0.5, -570, 0.5, 116)
 		window.Frame.BorderSizePixel = 0
 		window.Frame.Size = window.size
 		window.Frame.AutoButtonColor = false
